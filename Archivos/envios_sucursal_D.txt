@@ -1,0 +1,17 @@
+1001|Juarez Pedro|1.0|1
+1002|Martinez Ana|0.5|3
+1004|Romero Carla|2.0|2
+1005|Suarez Rodolfo|1.7|1
+1007|Villarreal Hugo|3.1|1
+1008|Silva Teresa|1.5|3
+1011|Mendez Carlos|0.9|2
+1012|Ojeda Noelia|1.2|1
+1013|Sanchez Paula|2.4|3
+1014|Quiroga Mario|1.0|2
+1015|Dominguez Laura|3.3|1
+1017|Gimenez Sergio|2.0|3
+1018|Campos Rocio|0.6|1
+1020|Fernandez Erika|1.1|2
+1022|Ortiz Damian|2.7|1
+1023|Acosta Miriam|0.8|3
+1025|Lozano David|1.9|2

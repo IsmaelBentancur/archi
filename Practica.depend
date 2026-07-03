@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1782954997 source:c:\users\isma\desktop\practicaparcial_2c_2025\practica\matriz.c
+	"Matriz.h"
+
+1782954742 c:\users\isma\desktop\practicaparcial_2c_2025\practica\matriz.h
+	<stdio.h>
+	<stdlib.h>
+
+1783058806 source:c:\users\isma\desktop\practicaparcial_2c_2025\practica\socios.c
+	<ctype.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"socios.h"
+
+1782953790 c:\users\isma\desktop\practicaparcial_2c_2025\practica\socios.h
+
+1782955267 source:c:\users\isma\desktop\practicaparcial_2c_2025\practica\main.c
+	<stdio.h>
+	<stdlib.h>
+	"socios.h"
+	"Matriz.h"
+
