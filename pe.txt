@@ -1,0 +1,190 @@
+#define TO_UPPER(c) ((c) >= 'a' && (c) <= 'z' ? (c) - 32 : (c))
+#define TO_LOWER(c) ((c) >= 'A' && (c) <= 'Z' ? (c) + 32 : (c))
+
+
+int strlen_ALU(const char *s)
+{
+    int len = 0;
+
+    while (s[len] != '\0')
+        len++;
+
+    return len;
+}
+
+
+char *strcpy_ALU(char *destino, const char *origen)
+{
+    int i = 0;
+
+    while (origen[i] != '\0') {
+        destino[i] = origen[i];
+        i++;
+    }
+
+    destino[i] = '\0';
+
+    return destino;
+}
+
+
+char *strcat_ALU(char *destino, const char *origen)
+{
+    int i = 0, j = 0;
+
+    while (destino[i] != '\0')
+        i++;
+
+    while (origen[j] != '\0') {
+        destino[i] = origen[j];
+        i++;
+        j++;
+    }
+
+    destino[i] = '\0';
+
+    return destino;
+}
+
+
+char *reverseStrcat_ALU(char *destino, const char *origen)
+{
+    int i = 0, len = 0, k;
+
+    while (destino[i] != '\0')
+        i++;
+
+    while (origen[len] != '\0')
+        len++;
+
+    for (k = len - 1; k >= 0; k--) {
+        destino[i] = origen[k];
+        i++;
+    }
+
+    destino[i] = '\0';
+    return destino;
+}
+
+
+char *strchr_ALU(const char *s, char c)
+{
+    int i = 0;
+
+    while (s[i] != '\0') {
+        if (s[i] == c)
+            return (char *)&s[i];
+        i++;
+    }
+
+    if (c == '\0')
+        return (char *)&s[i];
+
+    return NULL;
+}
+
+
+char *strstr_ALU(const char *s, const char *sub)
+{
+    int i = 0;
+
+    if (sub[0] == '\0')
+        return (char *)s;
+
+    while (s[i] != '\0') {
+        int j = 0;
+
+        while (s[i+j] != '\0' && sub[j] != '\0' && s[i+j] == sub[j])
+            j++;
+
+        if (sub[j] == '\0')
+            return (char *)&s[i];
+
+        i++;
+    }
+
+    return NULL;
+}
+
+
+char toupper_ALU(char c)
+{
+    if (c >= 'a' && c <= 'z')
+        return c - 32;
+
+    return c;
+}
+
+
+char tolower_ALU(char c)
+{
+    if (c >= 'A' && c <= 'Z')
+        return c + 32;
+
+    return c;
+}
+
+
+void normalizarPalabra_ALU(char *palabra)
+{
+    char *origen = palabra;
+    char *destino = palabra;
+
+    while (*origen != '\0') {
+
+        if ((*origen >= 'a' && *origen <= 'z') ||
+            (*origen >= 'A' && *origen <= 'Z')) {
+
+            *destino++ = TO_LOWER(*origen);
+        }
+
+        origen++;
+    }
+
+    *destino = '\0';
+}
+
+
+int contarApariciones_ALU(const char *texto, const char *palabra)
+{
+    int i = 0, cuenta = 0;
+
+    if (palabra[0] == '\0')
+        return 0;
+
+    while (texto[i] != '\0') {
+        int j = 0;
+
+        while (texto[i+j] != '\0' && palabra[j] != '\0' &&
+               texto[i+j] == palabra[j])
+            j++;
+
+        if (palabra[j] == '\0') {
+            cuenta++;
+            i += j;
+        } else {
+            i++;
+        }
+    }
+
+    return cuenta;
+}
+
+
+int esPalindromo_ALU(const char *s)
+{
+    int ini = 0, fin = 0;
+
+    while (s[fin] != '\0')
+        fin++;
+    fin--;
+
+    while (ini < fin) {
+        if (s[ini] != s[fin])
+            return 0;
+        ini++;
+        fin--;
+    }
+
+    return 1;
+}
